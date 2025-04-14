@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="CoreCube Adventure - платформер с ловушками и врагами">
+  <meta name="keywords" content="игра, платформер, CoreCube, приключения">
+  <meta name="author" content="Ваше имя">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>CoreCube Adventure</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <h1 class="game-title">CoreCube Adventure</h1>
+  <div class="info-panel">
+    <div class="info-item">
+      Уровень: <span class="info-value" id="level">1</span>
+    </div>
+    <div class="info-item">
+      Патроны: <span class="info-value" id="ammo">∞</span>
+    </div>
+    <div class="info-item">
+      Здоровье: <span class="info-value" id="health">3</span>
+    </div>
+  </div>
+  
+  <button class="music-control" id="musicToggle" title="Вкл/Выкл звук">🔊</button>
+  <button class="creator-control" id="creatorToggle" title="Режим создателя (Karen123)">👨‍💻</button>
+  <button class="hide-ids-control" id="hideIdsToggle" title="Показать ID платформ">🆔</button>
+  <button class="gun-control" id="gunToggle" title="Вкл/Выкл пистолет">🔫</button>
+  
+  <!-- Панель создателя -->
+  <div class="creator-panel" id="creatorPanel">
+    <div>Режим создателя</div>
+    <input type="number" id="levelInput" min="1" max="15" value="1">
+    <button id="goToLevelBtn">Перейти</button>
+  </div>
+  
+  <div class="level-complete" id="levelComplete">Уровень пройден!</div>
+  <canvas id="canvas" width="600" height="400"></canvas>
+  
+  <div class="hint-text">
+    Управление: 
+    <span class="key">W</span>
+    <span class="key">A</span>
+    <span class="key">D</span> или 
+    <span class="key">⭠</span>
+    <span class="key">⭡</span>
+    <span class="key">⭢</span>
+    <span class="key">F</span> (выстрел)
+  </div>
+  
+  <div class="controls">
+    <button class="btn" id="left">←</button>
+    <button class="btn" id="jump">↑</button>
+    <button class="btn" id="right">→</button>
+    <button class="btn" id="shoot">🔫</button>
+  </div>
+  
+  <audio id="bgMusic" loop>
+    <source src="фоновая музыка.mp3" type="audio/mpeg">
+    Ваш браузер не поддерживает аудио элемент.
+  </audio>
+  <audio id="jumpSound">
+    <source src="звук прыжка.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="completeSound">
+    <source src="звук пройдения уровня.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="shootSound">
+    <source src="звук стрельбы.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="trapSound">
+    <source src="звук умирания.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="enemyDeathSound">
+    <source src="звук умирания.mp3" type="audio/mpeg">
+  </audio>
+  <script src="script.js">
+  </script>
+</body>
+</html>
+
+
